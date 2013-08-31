@@ -1,0 +1,4 @@
+pde
+===
+
+Eclipse Plugin/RCP
