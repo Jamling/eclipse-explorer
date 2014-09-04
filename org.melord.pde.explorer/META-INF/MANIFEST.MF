@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.melord.pde.explorer;singleton:=true
+Bundle-Version: 3.5.1.2
+Bundle-Activator: org.melord.pde.explorer.Activator
+Bundle-Vendor: %Bundle-Vendor
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.team.ui,
+ org.eclipse.jdt.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

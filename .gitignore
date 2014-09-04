@@ -4,3 +4,17 @@
 *.jar
 *.war
 *.ear
+
+# generated files
+bin/
+
+# IDE
+
+## eclipse
+*.metadata
+*.settings
+
+## idea
+*.idea
+*.iml
+*/target
