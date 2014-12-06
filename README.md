@@ -39,17 +39,15 @@ installed in non-Java developement eclipse version.*
   * Click "OK" back to install page
   * Select Eclipse Explorer Feature
   * Next step...
+
 ## Configuration ##
 ### Command ###
 
-Explorer Command: The plugin will auto configure explorer command. But you can custom your 
+Explorer Command: The plugin will auto configure explorer command. But you can custom your explorer command still in Window->Preference->General->Resource Explorer. 
 
-explorer command still in Window->Preference->General->Resource Explorer. 
-==== Shortcut Key ====
+#### Shortcut Key ####
 
-Key assistant: The default shortcut key is "Ctrl + `", you can custom in Window->Preference
-
-->General->Keys.
+Key assistant: The default shortcut key is "Ctrl + `", you can custom in Window->Preference->General->Keys.
 ## Tutorial ##
 
   - Select an resource item which can be explorer
@@ -57,6 +55,6 @@ Key assistant: The default shortcut key is "Ctrl + `", you can custom in Window-
 
 The wiki uses [Markdown](/p/eclipseexplorer/wiki/markdown_syntax/) syntax.
 
-[[project_admins]]
-[[download_button]]
+[project_admins]
+[download_button]
 [用户指南]
