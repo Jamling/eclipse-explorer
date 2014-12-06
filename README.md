@@ -1,9 +1,7 @@
 Welcome to Eclipse explorer!
 ## Introduction ##
 
-Eclipse Explorer is an Eclipse plugin helping you to open the folder of selected resources 
-
-include follow resources:
+Eclipse Explorer is an Eclipse plugin helping you to open the folder of selected resources include follow resources:
 Java element, .java, .class, jar file, package, source folder and java project
 Common resources, such as .txt, .xml, and other resource
 Some special element such as cvs item in Synchronized View
@@ -11,15 +9,7 @@ Some special element such as cvs item in Synchronized View
 ## Requirement ##
   * JDT plugin
   * JDK/JRE 1.5 or higher
-  * Eclipse 3.5 or higher(recommend)
-  
-  *Note:Eclipse 3.4 lower(Un-tested)*
-  This plugin are developed in eclipse3.5 + jdk1.5, test under
-
-  * window 32bit+eclipse3.5+jdk1.5
-  * linux64bits+eclipse3.6+jdk1.6
-
-  *Note: This plugin requires Java Developement Tool(JDT) plugin. So, this plugin can't be 
+*Note: This plugin requires Java Developement Tool(JDT) plugin. So, this plugin can't be 
 installed in non-Java developement eclipse version.*
 
 ## Install ##
@@ -53,8 +43,3 @@ Key assistant: The default shortcut key is "Ctrl + `", you can custom in Window-
   - Select an resource item which can be explorer
   - Right click and select "Open in Explorer" or press short key set by you.
 
-The wiki uses [Markdown](/p/eclipseexplorer/wiki/markdown_syntax/) syntax.
-
-[project_admins]
-[download_button]
-[用户指南]
