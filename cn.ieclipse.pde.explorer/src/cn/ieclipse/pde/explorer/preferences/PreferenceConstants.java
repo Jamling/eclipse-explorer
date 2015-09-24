@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.melord.pde.explorer.preferences;
+package cn.ieclipse.pde.explorer.preferences;
 
-import org.eclipse.osgi.util.NLS;
+import cn.ieclipse.pde.explorer.ExplorerPlugin;
 
-public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "org.melord.pde.explorer.preferences.messages"; //$NON-NLS-1$
-	public static String ExplorerPreferencePage_cmd;
-	public static String ExplorerPreferencePage_desc;
-	public static String ExplorerPreferencePage_eg;
-	static {
-		// initialize resource bundle
-		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
-	}
+/**
+ * Constant definitions for plug-in preferences
+ */
+public class PreferenceConstants {
 
-	private Messages() {
-	}
+	/**
+	 * explorer command string key
+	 */
+	public static final String EXPLORER_CMD = ExplorerPlugin.PLUGIN_ID + ".cmd";
+
 }

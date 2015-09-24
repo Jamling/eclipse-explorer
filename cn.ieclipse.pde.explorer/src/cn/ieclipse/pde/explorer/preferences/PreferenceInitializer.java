@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.melord.pde.explorer.preferences;
+package cn.ieclipse.pde.explorer.preferences;
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.melord.pde.explorer.Activator;
+
+import cn.ieclipse.pde.explorer.ExplorerPlugin;
 
 /**
  * Class used to initialize default preference values.
@@ -31,10 +32,10 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 	 * initializeDefaultPreferences()
 	 */
 	public void initializeDefaultPreferences() {
-		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
+		IPreferenceStore store = ExplorerPlugin.getDefault().getPreferenceStore();
 		String cmd = "explorer";
-		int os = Activator.getOS();
-		if (os == Activator.OS_LINUX) {
+		int os = ExplorerPlugin.getOS();
+		if (os == ExplorerPlugin.OS_LINUX) {
 			cmd = "nautilus";
 		}
 		store.setDefault(PreferenceConstants.EXPLORER_CMD, cmd);

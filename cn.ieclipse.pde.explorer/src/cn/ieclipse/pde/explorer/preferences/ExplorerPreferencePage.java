@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.melord.pde.explorer.preferences;
+package cn.ieclipse.pde.explorer.preferences;
 
 import org.eclipse.jface.preference.*;
 import org.eclipse.ui.IWorkbenchPreferencePage;
+
+import cn.ieclipse.pde.explorer.ExplorerPlugin;
+
 import org.eclipse.ui.IWorkbench;
-import org.melord.pde.explorer.Activator;
 
 /**
  * This class represents a preference page that is contributed to the
@@ -36,7 +38,7 @@ public class ExplorerPreferencePage extends FieldEditorPreferencePage implements
 
 	public ExplorerPreferencePage() {
 		super(GRID);
-		setPreferenceStore(Activator.getDefault().getPreferenceStore());
+		setPreferenceStore(ExplorerPlugin.getDefault().getPreferenceStore());
 		setDescription(Messages.ExplorerPreferencePage_desc
 				+ System.getProperty("line.separator") //$NON-NLS-1$
 				+ Messages.ExplorerPreferencePage_eg);

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.melord.pde.explorer;
+package cn.ieclipse.pde.explorer;
 
 import java.util.Locale;
 
@@ -24,20 +24,20 @@ import org.osgi.framework.BundleContext;
 /**
  * The activator class controls the plug-in life cycle
  */
-public class Activator extends AbstractUIPlugin {
+public class ExplorerPlugin extends AbstractUIPlugin {
 	public static final int OS_WINDOWS = 0x01;
 	public static final int OS_LINUX = 0x02;
 	public static final int OS_UNKNOW = 0x03;
 	// The plug-in ID
-	public static final String PLUGIN_ID = "org.melord.pde.explorer";
+	public static final String PLUGIN_ID = "cn.ieclipse.pde.explorer";
 
 	// The shared instance
-	private static Activator plugin;
+	private static ExplorerPlugin plugin;
 
 	/**
 	 * The constructor
 	 */
-	public Activator() {
+	public ExplorerPlugin() {
 	}
 
 	/*
@@ -69,7 +69,7 @@ public class Activator extends AbstractUIPlugin {
 	 * 
 	 * @return the shared instance
 	 */
-	public static Activator getDefault() {
+	public static ExplorerPlugin getDefault() {
 		return plugin;
 	}
 

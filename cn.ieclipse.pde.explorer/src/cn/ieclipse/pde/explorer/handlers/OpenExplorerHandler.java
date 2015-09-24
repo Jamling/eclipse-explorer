@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.melord.pde.explorer.handlers;
+package cn.ieclipse.pde.explorer.handlers;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,8 +34,9 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.team.ui.synchronize.ISynchronizeModelElement;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.melord.pde.explorer.Activator;
-import org.melord.pde.explorer.preferences.PreferenceConstants;
+
+import cn.ieclipse.pde.explorer.ExplorerPlugin;
+import cn.ieclipse.pde.explorer.preferences.PreferenceConstants;
 
 /**
  * @author melord
@@ -100,13 +101,14 @@ public class OpenExplorerHandler extends AbstractHandler {
 			// explorer team ui resource
 			else if (obj instanceof ISynchronizeModelElement) {
 				resource = ((ISynchronizeModelElement) obj).getResource();
+				path = resource.getLocation().toOSString();
 			}
 			// process
 			if (path != null) {
 				// System.out.println(path);
 				String cmd = null;
 				try {
-					cmd = Activator.getDefault().getPreferenceStore()
+					cmd = ExplorerPlugin.getDefault().getPreferenceStore()
 							.getString(PreferenceConstants.EXPLORER_CMD).trim();
 					if (cmd.toLowerCase().startsWith("explorer")) {
 						String winCmd = String.format("%s %s", cmd, path);

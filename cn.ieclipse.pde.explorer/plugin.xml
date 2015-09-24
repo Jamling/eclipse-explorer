@@ -6,7 +6,7 @@
       <menuContribution
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
-               commandId="org.melord.pde.explorer.command1"
+               commandId="cn.ieclipse.pde.explorer.command.explorer"
                icon="icons/fldr_obj.gif"
                label="%command.label"
                style="push">
@@ -30,21 +30,21 @@
          point="org.eclipse.ui.commands">
       <command
             categoryId="org.eclipse.ui.category.window"
-            id="org.melord.pde.explorer.command1"
+            id="cn.ieclipse.pde.explorer.command.explorer"
             name="%command.name">
       </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="org.melord.pde.explorer.handlers.OpenExplorerHandler"
-            commandId="org.melord.pde.explorer.command1">
+            class="cn.ieclipse.pde.explorer.handlers.OpenExplorerHandler"
+            commandId="cn.ieclipse.pde.explorer.command.explorer">
       </handler>
    </extension>
    <extension
          point="org.eclipse.ui.bindings">
       <key
-            commandId="org.melord.pde.explorer.command1"
+            commandId="cn.ieclipse.pde.explorer.command.explorer"
             contextId="org.eclipse.ui.contexts.window"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
             sequence="M1+`">
@@ -54,15 +54,15 @@
          point="org.eclipse.ui.preferencePages">
       <page
             category="org.eclipse.ui.preferencePages.Workbench"
-            class="org.melord.pde.explorer.preferences.ExplorerPreferencePage"
-            id="org.melord.pde.explorer.preferences.ExplorerPreferencePage"
+            class="cn.ieclipse.pde.explorer.preferences.ExplorerPreferencePage"
+            id="cn.ieclipse.pde.explorer.preferences.ExplorerPreferencePage"
             name="%page.name">
       </page>
    </extension>
    <extension
          point="org.eclipse.core.runtime.preferences">
       <initializer
-            class="org.melord.pde.explorer.preferences.PreferenceInitializer">
+            class="cn.ieclipse.pde.explorer.preferences.PreferenceInitializer">
       </initializer>
    </extension>
 
