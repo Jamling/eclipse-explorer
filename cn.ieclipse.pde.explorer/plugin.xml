@@ -17,9 +17,15 @@
                      <instanceof
                            value="org.eclipse.core.resources.IResource">
                      </instanceof>
-                     <instanceof
-                           value="org.eclipse.jdt.core.IJavaElement">
-                     </instanceof>
+                     <adapt
+                           type="cn.ieclipse.pde.explorer.IExplorable">
+                        <test
+                              property="cn.ieclipse.pde.explorer.test1">
+                        </test>
+                        <test
+                              property="cn.ieclipse.pde.explorer.test1">
+                        </test>
+                     </adapt>
                   </or>
                </iterate>
             </visibleWhen>
