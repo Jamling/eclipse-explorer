@@ -3,6 +3,6 @@ Bundle-ManifestVersion: 2
 Bundle-Name: explorer4java
 Bundle-SymbolicName: cn.ieclipse.pde.explorer.java;singleton:=true
 Bundle-Version: 1.0.0
-Fragment-Host: org.melord.pde.explorer;bundle-version="3.5.1"
+Fragment-Host: cn.ieclipse.pde.explorer;bundle-version="4.0.0"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Require-Bundle: org.eclipse.jdt.core

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
-Bundle-SymbolicName: org.melord.pde.explorer;singleton:=true
+Bundle-SymbolicName: cn.ieclipse.pde.explorer;singleton:=true
 Bundle-Version: 4.0.0
 Bundle-Activator: cn.ieclipse.pde.explorer.ExplorerPlugin
 Bundle-Vendor: %Bundle-Vendor
