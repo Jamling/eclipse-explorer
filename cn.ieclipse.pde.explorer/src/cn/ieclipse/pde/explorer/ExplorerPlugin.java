@@ -101,13 +101,22 @@ public class ExplorerPlugin extends AbstractUIPlugin {
         return type;
     }
     
+    /**
+     * Explorer the resource
+     * 
+     * @param path
+     *            the resource's absolute folder
+     * @param file
+     *            the resource's absolute file, can be null, if exists will auto
+     *            select in explorer (only windows)
+     */
     public static void explorer(String path, String file) {
         if (path != null) {
             // System.out.println(path);
             String cmd = null;
             try {
-                cmd = ExplorerPlugin.getDefault().getPreferenceStore().getString(PreferenceConstants.EXPLORER_CMD)
-                        .trim();
+                cmd = ExplorerPlugin.getDefault().getPreferenceStore()
+                        .getString(PreferenceConstants.EXPLORER_CMD).trim();
                 if (cmd.toLowerCase().startsWith("explorer")) {
                     String winCmd = String.format("%s %s", cmd, path);
                     if (file != null) {
@@ -116,7 +125,8 @@ public class ExplorerPlugin extends AbstractUIPlugin {
                     Runtime.getRuntime().exec(winCmd);
                 }
                 else {
-                    Runtime.getRuntime().exec(String.format("%s %s", cmd, path)); //$NON-NLS-1$
+                    Runtime.getRuntime()
+                            .exec(String.format("%s %s", cmd, path)); //$NON-NLS-1$
                 }
             } catch (IOException e) {
                 //
