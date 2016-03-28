@@ -1,34 +1,28 @@
-Welcome to Eclipse explorer!
+Welcome to Eclipse explorer 4.x!
 ## Introduction ##
 
-Eclipse Explorer is an Eclipse plugin helping you to open the folder of selected resources include follow resources:
-Java element, .java, .class, jar file, package, source folder and java project
-Common resources, such as .txt, .xml, and other resource
-Some special element such as cvs item in Synchronized View
+Eclipse Explorer is an eclipse plugin helping you to open the folder or select resource in explorer quickly.
 
-## Requirement ##
-  * JDT plugin
-  * JDK/JRE 1.5 or higher
-*Note: This plugin requires Java Developement Tool(JDT) plugin. So, this plugin can't be 
-installed in non-Java developement eclipse version.*
+Basic feature
+1. Support basic resource explorer
+2. Support key assitant (default CTRL + `)
+3. Support Windows and Linux platform
+4. Support auto selecting file(Windows only)
+
+This plugin is a host plugin of other language explorer fragment(e.g. Eclipse explorer for java). Available explorer fragment:
+* Eclipse explorer for java
+
+If no fragment for your development language, you can [develop](http://ieclipse.cn/p/eclipse-explorer/development.html) it easy or mail [Author](mailto:li.jamling@gmail.com) to develop it.
 
 ## Install ##
 ### Eclipse Marketplace ###
-[https://marketplace.eclipse.org/content/eclipse-explorer](https://marketplace.eclipse.org/content/eclipse-explorer)
-### Local plugin arachive ###
-  * Download org.melord.pde.explorer.jar
-  * Copy to %Eclipse_Home%\plugins\
-  * Restart Eclipse
+1. Click Help->Eclipse Marketplace...
+2. Input the keywords "eclipse explorer" in Find and <kbd>enter</kbd>
+3. Choose Eclipse Explorer or Eclipse explorer for <var>language</var> and click "Install" button
+4. Trust the unsigned contents or certificate published by Jamling/ieclipse.cn
+5. Restart eclipse
 
-### Local Archive ###
- 
-  * Download update-site archive
-  * Click Help->Install New Software... in eclipse to open install page
-  * Click "Add..." button open add site dialog
-  * Click "Archive..." button to select .zip file.
-  * Click "OK" back to install page
-  * Select Eclipse Explorer Feature
-  * Next step...
+Marketplcae link: [https://marketplace.eclipse.org/content/eclipse-explorer](https://marketplace.eclipse.org/content/eclipse-explorer)
 
 ## Configuration ##
 ### Command ###
@@ -36,10 +30,9 @@ installed in non-Java developement eclipse version.*
 Explorer Command: The plugin will auto configure explorer command. But you can custom your explorer command still in Window->Preference->General->Resource Explorer. 
 
 #### Shortcut Key ####
-
 Key assistant: The default shortcut key is "Ctrl + `", you can custom in Window->Preference->General->Keys.
-## Tutorial ##
 
+## Tutorial ##
   - Select an resource item which can be explorer
   - Right click and select "Open in Explorer" or press short key set by you.
 
