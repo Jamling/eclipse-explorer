@@ -38,6 +38,9 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		if (os == ExplorerPlugin.OS_LINUX) {
 			cmd = "nautilus";
 		}
+		else if (os == ExplorerPlugin.OS_MAC) {
+		    cmd = "open -R";
+		}
 		store.setDefault(PreferenceConstants.EXPLORER_CMD, cmd);
 	}
 

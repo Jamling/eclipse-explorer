@@ -30,7 +30,8 @@ import cn.ieclipse.pde.explorer.preferences.PreferenceConstants;
 public class ExplorerPlugin extends AbstractUIPlugin {
     public static final int OS_WINDOWS = 0x01;
     public static final int OS_LINUX = 0x02;
-    public static final int OS_UNKNOW = 0x03;
+    public static final int OS_MAC = 0x03;
+    public static final int OS_UNKNOW = 0x00;
     // The plug-in ID
     public static final String PLUGIN_ID = "cn.ieclipse.pde.explorer";
     
@@ -94,6 +95,9 @@ public class ExplorerPlugin extends AbstractUIPlugin {
         }
         else if (osName.indexOf("windows") >= 0) {
             type = OS_WINDOWS;
+        }
+        else if (osName.indexOf("mac") >= 0 && osName.indexOf("os") >= 0) {
+            type = OS_MAC;
         }
         else {
             type = OS_UNKNOW;

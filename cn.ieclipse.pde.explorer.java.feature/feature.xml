@@ -20,11 +20,13 @@
    <url>
       <update label="%updateSiteName" url="http://ieclipse.cn/updates/"/>
       <discovery label="%updateSiteName" url="http://ieclipse.cn/updates/"/>
-      <discovery label="jamling.github.io" url="http://jamling.github.io/updates/"/>
+      <discovery label="jamling.github.io" url="https://jamling.github.io/updates/"/>
    </url>
 
    <requires>
       <import feature="cn.ieclipse.pde.explorer.feature" version="4.0.0"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="cn.ieclipse.pde.explorer" version="4.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
