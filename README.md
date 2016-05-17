@@ -4,6 +4,7 @@ Welcome to Eclipse explorer 4.x!
 Eclipse Explorer is an eclipse plugin helping you to open the folder or select resource in explorer quickly.
 
 Basic feature
+
 1. Support basic resource explorer
 2. Support key assitant (default CTRL + `)
 3. Support Windows and Linux platform
