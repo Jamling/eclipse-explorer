@@ -4,7 +4,7 @@ Eclipse Explorer 是Eclipse中快速在资源管理器中定位eclipse资源的�
 * 支持基本文件（夹）
 * 支持团队协作资源
 
-4.x 版本提供其它插件式开发，如Eclipse explorer for Java插件支持所有的Java版Eclipse。如果您想在其它语言中使用exploer功能，可以参考[开发文档](http://ieclipse.cn/p/eclipse-explorer/development.html)开发特定语言下的eclipse explorer插件
+4.x 版本提供其它插件式开发，如[Eclipse explorer for Java](https://marketplace.eclipse.org/content/eclipse-explorer-java)插件支持所有的Java版Eclipse。如果您想在其它语言中使用exploer功能，可以参考[开发文档](http://ieclipse.cn/p/eclipse-explorer/develop.html)开发特定语言下的eclipse explorer插件
 ## 安装 ##
 ### 应用市场 ###
   * 点击菜单栏Help->Eclipse Marketplace... 打开应用市场

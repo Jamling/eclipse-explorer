@@ -4,15 +4,16 @@ Welcome to Eclipse explorer 4.x!
 Eclipse Explorer is an eclipse plugin helping you to open the folder or select resource in explorer quickly.
 
 Basic feature
+
 1. Support basic resource explorer
 2. Support key assitant (default CTRL + `)
 3. Support Windows and Linux platform
 4. Support auto selecting file(Windows only)
 
-This plugin is a host plugin of other language explorer fragment(e.g. Eclipse explorer for java). Available explorer fragment:
+This plugin is a host plugin of other language explorer fragment(e.g. [Eclipse explorer for java](https://marketplace.eclipse.org/content/eclipse-explorer-java)). Available explorer fragment:
 * Eclipse explorer for java
 
-If no fragment for your development language, you can [develop](http://ieclipse.cn/p/eclipse-explorer/development.html) it easy or mail [Author](mailto:li.jamling@gmail.com) to develop it.
+If no fragment for your development language, you can [develop](http://ieclipse.cn/p/eclipse-explorer/develop.html) it easy or mail [Author](mailto:li.jamling@gmail.com) to develop it.
 
 ## Install ##
 ### Eclipse Marketplace ###
