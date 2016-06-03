@@ -19,12 +19,15 @@
                      </instanceof>
                      <adapt
                            type="cn.ieclipse.pde.explorer.IExplorable">
-                        <test
-                              property="cn.ieclipse.pde.explorer.test1">
-                        </test>
-                        <test
-                              property="cn.ieclipse.pde.explorer.test1">
-                        </test>
+                     </adapt>
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                     </adapt>
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                     </adapt>
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
                      </adapt>
                   </or>
                </iterate>
