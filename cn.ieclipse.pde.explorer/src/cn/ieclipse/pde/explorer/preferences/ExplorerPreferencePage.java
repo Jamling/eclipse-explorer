@@ -17,13 +17,15 @@ package cn.ieclipse.pde.explorer.preferences;
 
 import java.net.URL;
 
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Link;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
@@ -31,6 +33,7 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.browser.IWebBrowser;
 import org.eclipse.ui.browser.IWorkbenchBrowserSupport;
+import org.osgi.framework.Bundle;
 
 import cn.ieclipse.pde.explorer.ExplorerPlugin;
 
@@ -49,7 +52,7 @@ public class ExplorerPreferencePage extends FieldEditorPreferencePage
         implements IWorkbenchPreferencePage {
         
     public ExplorerPreferencePage() {
-        super(GRID);
+        super(FLAT);
         setPreferenceStore(ExplorerPlugin.getDefault().getPreferenceStore());
         setDescription(Messages.ExplorerPreferencePage_desc
                 + System.getProperty("line.separator") //$NON-NLS-1$
@@ -63,8 +66,11 @@ public class ExplorerPreferencePage extends FieldEditorPreferencePage
      * editor knows how to save and restore itself.
      */
     public void createFieldEditors() {
-        addField(new MyStringFieldEditor(PreferenceConstants.EXPLORER_CMD,
+        addField(new StringFieldEditor(PreferenceConstants.EXPLORER_CMD,
                 Messages.ExplorerPreferencePage_cmd, getFieldEditorParent()));
+                
+        addField(new MyStringFieldEditor(PreferenceConstants.EXPLORER_TIP,
+                Messages.ExplorerPreferencePage_tip, getFieldEditorParent()));
     }
     
     /*
@@ -76,7 +82,7 @@ public class ExplorerPreferencePage extends FieldEditorPreferencePage
     public void init(IWorkbench workbench) {
     }
     
-    private class MyStringFieldEditor extends StringFieldEditor {
+    private class MyStringFieldEditor extends BooleanFieldEditor {
         
         public MyStringFieldEditor(String name, String labelText,
                 Composite parent) {
@@ -86,12 +92,15 @@ public class ExplorerPreferencePage extends FieldEditorPreferencePage
         @Override
         protected void doFillIntoGrid(Composite parent, int numColumns) {
             super.doFillIntoGrid(parent, numColumns);
-            GridData gd;
-            Link l = new Link(parent, SWT.NONE);
+            
+            Label lbl = new Label(parent, SWT.BOLD);
+            lbl.setText("Installation");
+            
+            lbl = new Label(parent, SWT.WRAP);
+            lbl.setText(getBundlesInfo());
+            
+            Link l = new Link(parent, SWT.ITALIC);
             l.setText(Messages.ExplorerPreferencePage_note);
-            gd = new GridData(GridData.FILL_HORIZONTAL);
-            gd.horizontalSpan = numColumns;
-            l.setLayoutData(gd);
             l.addSelectionListener(new SelectionAdapter() {
                 @Override
                 public void widgetSelected(SelectionEvent e) {
@@ -120,4 +129,52 @@ public class ExplorerPreferencePage extends FieldEditorPreferencePage
         }
     }
     
+    private static String getBundlesInfo() {
+        StringBuilder sb = new StringBuilder();
+        Bundle bundle = Platform.getProduct().getDefiningBundle();
+        sb.append("Platform:\n● ");
+        sb.append(getBundleInfo(bundle));
+        bundle = Platform.getBundle(ExplorerPlugin.PLUGIN_ID);
+        sb.append("\nHost plugin:\n● ");
+        sb.append(getBundleInfo(bundle));
+        sb.append("\nFragments:");
+        Bundle[] fragments = Platform.getFragments(bundle);
+        if (fragments != null && fragments.length > 0) {
+            for (Bundle t : fragments) {
+                sb.append("\n● ");
+                sb.append(getBundleInfo(t));
+            }
+        }
+        else {
+            sb.append("\nNo fragment installed!");
+        }
+        return sb.toString();
+    }
+    
+    private static String getBundleInfo(Bundle bundle) {
+        String name = bundle.getHeaders().get("Bundle-Name");
+        String ver = bundle.getVersion().toString();
+        // UNINSTALLED,INSTALLED, RESOLVED, STARTING, STOPPING, ACTIVE.
+        String stStr = "unknown";
+        int st = bundle.getState();
+        if (st == Bundle.UNINSTALLED) {
+            stStr = "uninstalled";
+        }
+        else if (st == Bundle.INSTALLED) {
+            stStr = "installed";
+        }
+        else if (st == Bundle.RESOLVED) {
+            stStr = "resolved";
+        }
+        else if (st == Bundle.STARTING) {
+            stStr = "starting";
+        }
+        else if (st == Bundle.STOPPING) {
+            stStr = "stopping";
+        }
+        else if (st == Bundle.ACTIVE) {
+            stStr = "active";
+        }
+        return String.format("%s(%s):%s", name, ver, stStr);
+    }
 }

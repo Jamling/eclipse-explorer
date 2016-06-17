@@ -18,6 +18,11 @@ package cn.ieclipse.pde.explorer;
 import java.io.IOException;
 import java.util.Locale;
 
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
+import org.eclipse.core.runtime.ILog;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -87,6 +92,53 @@ public class ExplorerPlugin extends AbstractUIPlugin {
         return imageDescriptorFromPlugin(PLUGIN_ID, path);
     }
     
+    /**
+     * Print log to Error log view
+     * 
+     * @param severity
+     *            see {@link IStatus#OK}, {@link IStatus#WARNING},
+     *            {@link IStatus#ERROR}
+     * @param message
+     *            message
+     * @param e
+     *            exception
+     */
+    public static void log(int severity, String message, Throwable e) {
+        ILog log = ExplorerPlugin.getDefault().getLog();
+        log.log(new Status(severity, PLUGIN_ID, message, e));
+    }
+    
+    /**
+     * Print warning log
+     * 
+     * @param message
+     *            message
+     * @param e
+     *            exception
+     * @see #log(int, String, Throwable)
+     */
+    public static void w(String message, Throwable e) {
+        log(IStatus.WARNING, message, e);
+    }
+    
+    /**
+     * Print normal log
+     * 
+     * @param message
+     *            message
+     * @param e
+     *            exception
+     * @see #log(int, String, Throwable)
+     */
+    public static void v(String message) {
+        log(IStatus.OK, message, null);
+    }
+    
+    /**
+     * Detect operation system
+     * 
+     * @return value of [{@link #OS_WINDOWS}|{@link #OS_LINUX}|{@link #OS_MAC}]
+     */
     public static int getOS() {
         int type = OS_WINDOWS;
         String osName = System.getProperty("os.name").toLowerCase(Locale.US);
@@ -138,4 +190,31 @@ public class ExplorerPlugin extends AbstractUIPlugin {
             }
         }
     }
+    
+    /**
+     * Get {@link IExplorable} object from {@link IResource}
+     * 
+     * @param resource
+     *            the resource
+     * @return {@link IExplorable} object
+     */
+    public static IExplorable getFromResource(IResource resource) {
+        if (resource == null) {
+            return null;
+        }
+        IExplorable explor = null;
+        String file;
+        String path;
+        // common resource file
+        if (resource instanceof IFile) {
+            file = resource.getLocation().toOSString();
+            explor = new Explorer(null, file);
+        }
+        else {
+            path = resource.getLocation().toOSString();
+            explor = new Explorer(path, null);
+        }
+        return explor;
+    }
+    
 }

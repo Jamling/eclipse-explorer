@@ -24,6 +24,7 @@ import java.io.File;
  *         
  */
 public class Explorer implements IExplorable {
+    private String id;
     private String folder = null;
     private String file = null;
     
@@ -35,12 +36,14 @@ public class Explorer implements IExplorable {
         if (file != null) {
             this.file = file;
             int pos = file.lastIndexOf(File.separator);
-            this.folder = file.substring(0, pos);
-            // fix space file name
-            if (pos < file.length()) {
-                String fn = file.substring(pos + 1);
-                if (fn.contains(" ")) {
-                    this.file = null;
+            if (pos >= 0) {
+                this.folder = file.substring(0, pos);
+                // fix space file name
+                if (pos < file.length()) {
+                    String fn = file.substring(pos + 1);
+                    if (fn.contains(" ")) {
+                        this.file = null;
+                    }
                 }
             }
         }
@@ -65,4 +68,16 @@ public class Explorer implements IExplorable {
         return file;
     }
     
+    @Override
+    public void setIdentifier(String id) {
+        this.id = id;
+    }
+    
+    @Override
+    public String toString() {
+        if (id != null && id.trim().length() > 0) {
+            return String.format("(%s)%s", id, folder);
+        }
+        return String.format("%s", folder);
+    }
 }

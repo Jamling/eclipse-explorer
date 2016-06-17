@@ -27,4 +27,7 @@ public class PreferenceConstants {
 	 */
 	public static final String EXPLORER_CMD = ExplorerPlugin.PLUGIN_ID + ".cmd";
 
+	public static final String EXPLORER_TIP = ExplorerPlugin.PLUGIN_ID + ".tip";
+	
+	public static final String EXPLORER_PRT = ExplorerPlugin.PLUGIN_ID + ".prt";
 }

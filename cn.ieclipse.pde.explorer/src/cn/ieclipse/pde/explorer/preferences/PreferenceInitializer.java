@@ -42,6 +42,7 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
 		    cmd = "open -R";
 		}
 		store.setDefault(PreferenceConstants.EXPLORER_CMD, cmd);
+		store.setDefault(PreferenceConstants.EXPLORER_TIP, true);
 	}
 
 }

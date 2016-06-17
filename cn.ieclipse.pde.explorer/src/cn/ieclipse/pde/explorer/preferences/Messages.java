@@ -23,6 +23,10 @@ public class Messages extends NLS {
 	public static String ExplorerPreferencePage_desc;
 	public static String ExplorerPreferencePage_eg;
     public static String ExplorerPreferencePage_note;
+    public static String ExplorerPreferencePage_tip;
+    public static String OpenExplorerHandler_dia_msg;
+    public static String OpenExplorerHandler_dia_prt;
+    public static String OpenExplorerHandler_dia_title;
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(BUNDLE_NAME, Messages.class);

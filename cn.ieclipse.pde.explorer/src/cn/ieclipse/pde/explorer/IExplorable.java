@@ -42,4 +42,13 @@ public interface IExplorable extends IAdaptable {
      * @return file to select, can be empty
      */
     public String getFile();
+    
+    /**
+     * Set the id, it may be saw in "Error log" to identify which fragment
+     * return this
+     * 
+     * @param id
+     *            id for the fragment
+     */
+    public void setIdentifier(String id);
 }

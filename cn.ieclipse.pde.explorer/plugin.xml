@@ -2,8 +2,10 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
+         id="cn.ieclipse.pde.explorer.menu"
          point="org.eclipse.ui.menus">
       <menuContribution
+            allPopups="true"
             locationURI="popup:org.eclipse.ui.popup.any?after=additions">
          <command
                commandId="cn.ieclipse.pde.explorer.command.explorer"
@@ -11,26 +13,25 @@
                label="%command.label"
                style="push">
             <visibleWhen>
-               <iterate
-                     ifEmpty="false">
-                  <or>
-                     <instanceof
-                           value="org.eclipse.core.resources.IResource">
-                     </instanceof>
-                     <adapt
-                           type="cn.ieclipse.pde.explorer.IExplorable">
-                     </adapt>
-                     <adapt
-                           type="org.eclipse.core.resources.IResource">
-                     </adapt>
-                     <adapt
-                           type="org.eclipse.core.resources.IResource">
-                     </adapt>
-                     <adapt
-                           type="org.eclipse.core.resources.IResource">
-                     </adapt>
-                  </or>
-               </iterate>
+               <reference
+                     definitionId="cn.ieclipse.pde.explorer.definition.explorer.all">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+      <menuContribution
+            allPopups="true"
+            locationURI="popup:#AbstractTextEditorContext?after=additions">
+         <command
+               commandId="cn.ieclipse.pde.explorer.command.explorer.editor"
+               icon="icons/fldr_editor.png"
+               label="%command.label"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <reference
+                     definitionId="cn.ieclipse.pde.explorer.definition.explorer.editor">
+               </reference>
             </visibleWhen>
          </command>
       </menuContribution>
@@ -42,12 +43,21 @@
             id="cn.ieclipse.pde.explorer.command.explorer"
             name="%command.name">
       </command>
+      <command
+            categoryId="org.eclipse.ui.category.window"
+            id="cn.ieclipse.pde.explorer.command.explorer.editor"
+            name="%command.name">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
             class="cn.ieclipse.pde.explorer.handlers.OpenExplorerHandler"
             commandId="cn.ieclipse.pde.explorer.command.explorer">
+      </handler>
+      <handler
+            class="cn.ieclipse.pde.explorer.handlers.OpenExplorerHandler2"
+            commandId="cn.ieclipse.pde.explorer.command.explorer.editor">
       </handler>
    </extension>
    <extension
@@ -73,6 +83,46 @@
       <initializer
             class="cn.ieclipse.pde.explorer.preferences.PreferenceInitializer">
       </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="cn.ieclipse.pde.explorer.definition.explorer">
+         <or>
+            <adapt
+                  type="org.eclipse.core.resources.IResource">
+            </adapt>
+            <adapt
+                  type="cn.ieclipse.pde.explorer.IExplorable">
+            </adapt>
+            <with
+                  variable="activeMenuSelection">
+               <adapt
+                     type="org.eclipse.core.resources.IResource">
+               </adapt>
+            </with>
+         </or>
+      </definition>
+      <definition
+            id="cn.ieclipse.pde.explorer.definition.explorer.editor">
+         <with
+               variable="activeEditorInput">
+            <adapt
+                  type="org.eclipse.core.resources.IResource">
+            </adapt>
+         </with>
+      </definition>
+      <definition
+            id="cn.ieclipse.pde.explorer.definition.explorer.all">
+         <not>
+            <with
+                  variable="activeMenuSelection">
+               <adapt
+                     type="org.eclipse.jface.text.ITextSelection">
+               </adapt>
+            </with>
+         </not>
+      </definition>
    </extension>
 
 </plugin>
