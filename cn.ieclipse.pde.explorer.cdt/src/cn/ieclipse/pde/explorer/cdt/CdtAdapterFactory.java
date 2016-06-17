@@ -15,14 +15,15 @@
  */
 package cn.ieclipse.pde.explorer.cdt;
 
-import org.eclipse.cdt.core.model.ICContainer;
 import org.eclipse.cdt.core.model.ICElement;
 import org.eclipse.cdt.core.model.ICProject;
 import org.eclipse.cdt.core.model.IInclude;
+import org.eclipse.cdt.core.model.IIncludeFileEntry;
 import org.eclipse.core.resources.IResource;
 
 import cn.ieclipse.pde.explorer.AdapterFactory;
 import cn.ieclipse.pde.explorer.Explorer;
+import cn.ieclipse.pde.explorer.ExplorerPlugin;
 import cn.ieclipse.pde.explorer.IExplorable;
 
 /**
@@ -35,34 +36,41 @@ public class CdtAdapterFactory extends AdapterFactory {
     
     @Override
     public IExplorable getExplorable(Object adaptableObject) {
+        IExplorable ret = null;
+        // for c/c++ element
+        if (adaptableObject instanceof ICElement) {
+            ret = getFromCDT((ICElement) adaptableObject);
+        }
+        
+        if (ret != null) {
+            ret.setIdentifier("explorer4cdt");
+        }
+        return ret;
+    }
+    
+    public IExplorable getFromCDT(ICElement cele) {
         String path = null;
-        if (adaptableObject instanceof ICProject) {
-            ICProject cele = (ICProject) adaptableObject;
-            path = cele.getProject().getLocation().toOSString();
+        // project
+        if (cele instanceof ICProject) {
+            path = ((ICProject) cele).getProject().getLocation().toOSString();
             return new Explorer(path, null);
         }
-        else if (adaptableObject instanceof ICContainer) {
-            ICContainer cele = (ICContainer) adaptableObject;
-            path = cele.getResource().getLocation().toOSString();
-            return new Explorer(path, null);
-        }
-        else if (adaptableObject instanceof IInclude) {
-            IInclude cele = (IInclude) adaptableObject;
-            path = cele.getParent().getResource().getLocation().toOSString();
+        else if (cele instanceof IIncludeFileEntry) {
+            path = ((IIncludeFileEntry) cele).getFullIncludeFilePath()
+                    .toOSString();
             return new Explorer(null, path);
         }
-        else if (adaptableObject instanceof ICElement) {
-            ICElement cele = (ICElement) adaptableObject;
+        else if (cele instanceof IInclude) {
+            path = ((IInclude) cele).getParent().getPath().toOSString();
+            return new Explorer(null, path);
+        }
+        // other
+        else {
             IResource res = cele.getResource();
-            if (res == null) {
-                res = cele.getAdapter(IResource.class);
-            }
             if (res != null) {
-                path = res.getLocation().toOSString();
-                return new Explorer(null, path);
+                return ExplorerPlugin.getFromResource(res);
             }
         }
         return null;
     }
-    
 }

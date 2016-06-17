@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="cn.ieclipse.pde.explorer.java.feature"
-      label="Eclipse explorer for java"
-      version="1.0.0"
+      label="Eclipse Explorer for Java"
+      version="1.0.0.qualifier"
       provider-name="%providerName">
 
    <description>
@@ -18,13 +18,12 @@
    </license>
 
    <url>
-      <update label="%updateSiteName" url="http://ieclipse.cn/updates/"/>
-      <discovery label="%updateSiteName" url="http://ieclipse.cn/updates/"/>
-      <discovery label="jamling.github.io" url="https://jamling.github.io/updates/"/>
+      <update label="%updateSiteName" url="http://dl.ieclipse.cn/updates/explorer/"/>
+      <discovery label="%updateSiteName" url="http://dl.ieclipse.cn/updates/"/>
+      <discovery label="jamling.github.io" url="https://jamling.github.io/PDESite/updates/"/>
    </url>
 
    <requires>
-      <import feature="cn.ieclipse.pde.explorer.feature" version="4.0.0"/>
       <import plugin="org.eclipse.jdt.core"/>
       <import plugin="cn.ieclipse.pde.explorer" version="4.0.0" match="greaterOrEqual"/>
    </requires>
@@ -33,7 +32,7 @@
          id="cn.ieclipse.pde.explorer.java"
          download-size="0"
          install-size="0"
-         version="1.0.0"
+         version="1.0.0.qualifier"
          fragment="true"
          unpack="false"/>
 
