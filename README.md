@@ -1,7 +1,7 @@
 Welcome to Eclipse explorer 4.x!
 ## Introduction
 
-![screenshot](http://dl.ieclipse.cn/screenshots/explorer.png)
+![screenshot](http://dl.ieclipse.cn/sreenshots/explorer.png)
 
 Eclipse Explorer is an Eclipse plugin helping you to open the folder or select resource in explorer quickly.
 Our aim is to make it the most powerfull explorer plugin of Eclipse
@@ -15,7 +15,7 @@ Special features
 - Support **`plugin fragment`** for enhance feature
 
 ## Plugin fragments
-- Eclipse Explorer for Java
+### Eclipse Explorer for Java
   - Author: [Jamling]
   - Short name: explorer4java
   - Suitable: For Java developer IDEs, such as:
@@ -23,13 +23,14 @@ Special features
     * Eclipse IDE for Java EE Developers
     * Eclipse for RCP and RAP Developers
     * And other Eclipse IDE using Java language...
-- Eclipse Explorer for CDT
+### Eclipse Explorer for CDT
  - Author: [Jamling]
  - Short name: explorer4cdt
  - Suitable: for C/C++ developer IDEs, such as:
     * Eclipse IDE for C/C++ Developers
     * Eclipse for Android Developers
-- Other fragment? just waiting for you!
+
+Other fragment? just waiting for you!
 
 If no fragment for your development language, you can [develop](http://ieclipse.cn/p/eclipse-explorer/develop.html) it easy or mail [Author](mailto:li.jamling@gmail.com) to develop it.
 
