@@ -23,6 +23,7 @@ Special features
     * Eclipse IDE for Java EE Developers
     * Eclipse for RCP and RAP Developers
     * And other Eclipse IDE using Java language...
+  
 ### Eclipse Explorer for CDT
  - Author: [Jamling]
  - Short name: explorer4cdt
