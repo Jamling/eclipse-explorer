@@ -1,6 +1,8 @@
 Welcome to Eclipse explorer 4.x!
 ## Introduction
 
+![screenshot](http://dl.ieclipse.cn/screenshots/explorer.png)
+
 Eclipse Explorer is an Eclipse plugin helping you to open the folder or select resource in explorer quickly.
 Our aim is to make it the most powerfull explorer plugin of Eclipse
 
@@ -13,7 +15,7 @@ Special features
 - Support **`plugin fragment`** for enhance feature
 
 ## Plugin fragments
-- [Eclipse Explorer for Java](https://marketplace.eclipse.org/content/eclipse-explorer-java)
+- Eclipse Explorer for Java
   - Author: [Jamling]
   - Short name: explorer4java
   - Suitable: For Java developer IDEs, such as:
@@ -56,8 +58,10 @@ Explorer Command: The plugin will auto configure explorer command. And you can c
 The default assistant key is "Ctrl + `", you can change it in Window->Preference->General->Keys.
 
 ## Tutorial
-  - Select an resource item which can be explorerable
-  - Right click and select "Open in Explorer" or press short key set by you.
+
+- Select an resource item which can be explorerable
+- Right click and select "Open in Explorer" or press short key set by you.
+
 ## Developer
 See [documents](http://ieclipse.cn/en/p/eclipse-explorer/develop.html) on [iecipse.cn](http://ieclipse.cn/en/p/eclipse-explorer) 
 
