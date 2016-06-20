@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="cn.ieclipse.pde.explorer.feature"
+      id="cn.ieclipse.pde.explorer.group.feature"
       label="Eclipse Explorer"
       version="4.1.0.qualifier"
-      provider-name="%providerName"
-      plugin="cn.ieclipse.pde.explorer">
+      provider-name="%providerName">
 
    <description>
       %description
@@ -24,18 +23,18 @@
       <discovery label="jamling.github.io" url="https://jamling.github.io/PDESite/updates/"/>
    </url>
 
-   <requires>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.team.ui"/>
-   </requires>
+   <includes
+         id="cn.ieclipse.pde.explorer.feature"
+         version="0.0.0"/>
 
-   <plugin
-         id="cn.ieclipse.pde.explorer"
-         download-size="0"
-         install-size="0"
-         version="4.1.0.qualifier"
-         unpack="false"/>
+   <includes
+         id="cn.ieclipse.pde.explorer.java.feature"
+         version="0.0.0"
+         optional="true"/>
+
+   <includes
+         id="cn.ieclipse.pde.explorer.cdt.feature"
+         version="0.0.0"
+         optional="true"/>
 
 </feature>

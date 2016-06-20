@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site
+      mirrorsURL="http://dl.ieclipse.cn/updates/">
+   <description name="Eclipse explorer update site" url="http://dl.ieclipse.cn/updates/explorer/">
+      Official update site.
+   </description>
+   <feature url="features/cn.ieclipse.pde.explorer.group.feature_4.1.0.201606201048.jar" id="cn.ieclipse.pde.explorer.group.feature" version="4.1.0.201606201048">
+      <category name="Eclipse Explorer"/>
+   </feature>
+   <category-def name="Eclipse Explorer" label="Eclipse Explorer"/>
+</site>
