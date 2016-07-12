@@ -132,16 +132,16 @@ public class ExplorerPreferencePage extends FieldEditorPreferencePage
     private static String getBundlesInfo() {
         StringBuilder sb = new StringBuilder();
         Bundle bundle = Platform.getProduct().getDefiningBundle();
-        sb.append("Platform:\n● ");
+        sb.append("Platform:\n\u25cf ");
         sb.append(getBundleInfo(bundle));
         bundle = Platform.getBundle(ExplorerPlugin.PLUGIN_ID);
-        sb.append("\nHost plugin:\n● ");
+        sb.append("\nHost plugin:\n\u25cf ");
         sb.append(getBundleInfo(bundle));
         sb.append("\nFragments:");
         Bundle[] fragments = Platform.getFragments(bundle);
         if (fragments != null && fragments.length > 0) {
             for (Bundle t : fragments) {
-                sb.append("\n● ");
+                sb.append("\n\u25cf ");
                 sb.append(getBundleInfo(t));
             }
         }
