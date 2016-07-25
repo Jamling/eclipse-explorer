@@ -1,6 +1,6 @@
 ## 介绍
 
-![screenshot](http://dl.ieclipse.cn/sreenshots/explorer.png)
+![screenshot](http://dl.ieclipse.cn/screenshots/explorer.png)
 
 Eclipse Explorer 是Eclipse中快速在资源管理器中定位eclipse资源的插件。它是目前史上最强大的eclipse explorer插件
 
