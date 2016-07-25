@@ -1,7 +1,7 @@
 Welcome to Eclipse explorer 4.x!
 ## Introduction
 
-![screenshot](http://dl.ieclipse.cn/sreenshots/explorer.png)
+![screenshot](http://dl.ieclipse.cn/screenshots/explorer.png)
 
 Eclipse Explorer is an Eclipse plugin helping you to open the folder or select resource in explorer quickly.
 Our aim is to make it the most powerfull explorer plugin of Eclipse
