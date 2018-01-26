@@ -69,6 +69,6 @@ The default assistant key is "Ctrl + `", you can change it in Window->Preference
 - Right click and select "Open in Explorer" or press short key set by you.
 
 ## Developer
-See [documents](http://ieclipse.cn/en/p/eclipse-explorer/develop.html) on [iecipse.cn](http://ieclipse.cn/en/p/eclipse-explorer) 
+See [documents](http://www.ieclipse.cn/en/p/eclipse-explorer/develop.html) on [www.iecipse.cn](http://www.ieclipse.cn/en/p/eclipse-explorer) 
 
 [Jamling]: https://github.com/Jamling/
