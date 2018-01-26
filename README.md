@@ -2,7 +2,7 @@
 [![Eclipse Marketplace](https://img.shields.io/eclipse-marketplace/v/eclipse-explorer.svg)](https://marketplace.eclipse.org/content/eclipse-explorer)
 [![Eclipse Marketplace](https://img.shields.io/eclipse-marketplace/dt/eclipse-explorer.svg)](https://marketplace.eclipse.org/content/eclipse-explorer)
 
-Welcome to Eclipse explorer 4.x!
+Welcome to Eclipse explorer 4.x! [中文README](./README_zh.md)
 ## Introduction
 
 ![screenshot](https://raw.githubusercontent.com/Jamling/eclipse-explorer/master/screenshot.gif)
