@@ -1,3 +1,7 @@
+[![GitHub release](https://img.shields.io/github/release/jamling/eclipse-explorer.svg?maxAge=3600)](https://github.com/Jamling/eclipse-explorer)
+[![Eclipse Marketplace](https://img.shields.io/eclipse-marketplace/v/eclipse-explorer.svg)](https://marketplace.eclipse.org/content/eclipse-explorer)
+[![Eclipse Marketplace](https://img.shields.io/eclipse-marketplace/dt/eclipse-explorer.svg)](https://marketplace.eclipse.org/content/eclipse-explorer)
+
 Welcome to Eclipse explorer 4.x!
 ## Introduction
 
