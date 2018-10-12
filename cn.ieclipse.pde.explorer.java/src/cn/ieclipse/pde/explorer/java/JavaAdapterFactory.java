@@ -82,7 +82,11 @@ public class JavaAdapterFactory extends AdapterFactory {
             IPackageFragmentRoot src = ((IPackageFragmentRoot) obj);
             IProject p = src.getJavaProject().getProject();
             String prjPath = p.getLocation().toOSString();
-            path = new File(prjPath, src.getElementName()).getAbsolutePath();
+            IResource res = src.getResource();
+            // Fix multi-folder source folder issue
+            String srcospath = res.getProjectRelativePath().toOSString();
+            path = new File(prjPath, srcospath).getAbsolutePath();
+            // end fix
             return new Explorer(path, null);
             // System.out.println(path);
         }
